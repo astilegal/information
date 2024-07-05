@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Property Contract Services - Your trusted partner for property contracts in Bengaluru and Nagpur. Specializing in rental agreements, lease deeds, sale deeds, and document verification.">
+    <meta name="keywords" content="property contract services, rental agreement, lease deed, sale deed, document verification, Nagpur, Bengaluru">
+    <meta name="author" content="Your Association Name">
+
+    <title>Property Contract Services</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7d56b5;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        /* Header Styles */
+        header {
+            background-color: #5b3f8e;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 150px;
+            width: auto;
+        }
+        .logo h1 {
+            margin-left: 10px;
+            font-size: 1.8rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 5px;
+            font-weight: 500;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+        }
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+        .contact p {
+            margin: 0;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0 2rem;
+            font-weight: 400;
+        }
+        /* Main Content Styles */
+        .main-content {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        /* Section Styles */
+        .section {
+            margin-bottom: 2rem;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        /* Service Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .service-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-item img {
+            width: 180px;
+            margin-bottom: 1rem;
+        }
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .service-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        /* Call-to-Action Buttons */
+        .cta-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+        /* Testimonials */
+        .testimonial {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .testimonial p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .testimonial cite {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #888;
+        }
+        /* FAQ Accordion */
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        .accordion:hover, .accordion.active {
+            background-color: #ddd;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+            border-radius: 5px;
+            max-height: 0;
+            transition: max-height 0.2s ease-out;
+        }
+        .panel.active {
+            display: block;
+            max-height: 500px; /* Adjust as needed */
+        }
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        /* Contact Form Styles */
+        #contact-form {
+            display: none; /* Hide the default contact form */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .logo h1 {
+                font-size: 1 rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .service-item {
+                padding: 1rem;
+            }
+            .testimonial p {
+                font-size: 1rem;
+            }
+            .cta-button {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Property Contract Services Logo">
+                
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="contact">
+              <p>Phone: 
+  <a href="tel:+7899082917" class="cta-button">
+    <img src="phone-call.png" alt="Phone Icon" style="vertical-align: middle; width: 16px; height: 16px;"> Call Now
+  </a>
+</p>
+
+
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome To Āsti Property Contract Consultancy Services</h1>
+            <p>Your trusted partner for all property contract needs in Bengaluru and Nagpur.</p>
+            <a href="#services" class="cta-button">Learn More</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <main class="main-content">
+            <section id="about-us" class="section">
+                <h2>About Us</h2>
+                <p>At Āsti, we excel in crafting and customizing property contracts to precisely fit our clients' unique requirements. With a dedicated focus on professionalism and precision, our expert team guarantees that every document we create is legally robust and fully compliant with regulatory standards. Whether you're buying, selling, or leasing property, we prioritize clarity and accuracy in every detail, ensuring peace of mind for our clients throughout the process. Our commitment extends beyond drafting contracts; we provide comprehensive services that include document modification and verification, ensuring that all aspects of property transactions are seamlessly managed. With Āsti, you can trust in our expertise to navigate the complexities of property law, delivering solutions that are tailored to safeguard your interests effectively.
+
+
+
+
+
+
+</p>
+            </section>
+
+            <section id="services" class="section">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <img src="service1.jpeg" alt="Service 1">
+                        <h3>Rental Agreements</h3>
+                        <p>Customized rental agreements that protect both tenants and landlords.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="service2.jpeg" alt="Service 2">
+                        <h3>Lease Deeds</h3>
+                        <p>Comprehensive lease deeds that ensure clear terms and conditions.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="service3.jpeg" alt="Service 3">
+                        <h3>Sale Deeds</h3>
+                        <p>Efficient sale deeds that facilitate smooth property transfers.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="service4.jpeg" alt="Service 4">
+                        <h3>Document Verification</h3>
+                        <p>Thorough verification of property documents to prevent legal issues.</p>
+                    </div>
+					<div class="service-item">
+                        <img src="service5.jpeg" alt="Service 4">
+                        <h3>Gift Deeds</h3>
+                        <p>Stipulations making the Gift more precise and concise</p>
+                    </div>
+					<div class="service-item">
+                        <img src="service6.jpeg" alt="Service 4">
+                        <h3>Mortgage Deeds</h3>
+                        <p>Safe Mortgage contracts opens key to property ownership</p>
+                    </div>
+					<div class="service-item">
+                        <img src="service7.jpeg" alt="Service 4">
+                        <h3>Many More</h3>
+                        <p>Many more legal contracts can be drafted</p>
+                    </div>
+					
+				
+					
+					
+					
+                </div>
+            </section>
+
+            <section id="pricing" class="section">
+                <h2>Our Pricing</h2>
+                <p>We offer competitive pricing packages tailored to meet your specific requirements. Contact us today for a detailed quote!</p>
+				
+                <a href="tel:+7899082917" class="cta-button">Call Now</a>
+                <a href="mailto:your@email.com" class="cta-button">Email Us</a>
+                <p>Or fill out our <a href="contact.html" target="_blank" class="cta-button">Contact Form</a> for a quick response.</p>
+            </section>
+
+           <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion-container">
+        <button class="accordion">What types of property contracts do you handle?</button>
+        <div class="panel">
+            <p>We handle a wide range of property contracts including rental agreements, lease deeds, sale deeds, and document verification services.</p>
+        </div>
+        <button class="accordion">How do I get started with your services?</button>
+        <div class="panel">
+            <p>Getting started is easy! Simply contact us via phone or email, or fill out our online form to discuss your requirements.</p>
+        </div>
+        <button class="accordion">What are your service areas?</button>
+        <div class="panel">
+            <p>We currently serve clients in Bengaluru and Nagpur, ensuring personalized service and expertise in local property laws.</p>
+        </div>
+    </div>
+</section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Association Name. All rights reserved. | Designed by Your Name</p>
+            <nav>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for accordion functionality
+        const accordions = document.querySelectorAll(".accordion");
+
+        accordions.forEach(accordion => {
+            accordion.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
