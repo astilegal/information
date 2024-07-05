@@ -28,9 +28,10 @@
         }
         .section {
             text-align: center;
+            margin-bottom: 30px;
         }
         .section h2 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
             color: #EAD94C;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,6 +40,7 @@
             font-size: 1.2em;
             margin-bottom: 30px;
             line-height: 1.6;
+            color: #FFF;
         }
         .contact-options {
             display: flex;
@@ -48,7 +50,8 @@
             margin-top: 30px;
         }
         .cta-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background-color: #EAD94C;
             color: #6B3A92;
             padding: 12px 24px;
@@ -63,9 +66,13 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
+        .cta-button span {
+            margin-left: 8px;
+        }
         .form-link {
             margin-top: 30px;
             font-size: 1.1em;
+            color: #FFF;
         }
         .form-link a {
             color: #EAD94C;
@@ -75,6 +82,18 @@
         .form-link a:hover {
             color: #F5E94C;
         }
+        @media (max-width: 600px) {
+            .section h2 {
+                font-size: 2.5em;
+            }
+            .section p {
+                font-size: 1em;
+            }
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -83,9 +102,10 @@
             <h2>Contact Us</h2>
             <p>Ready to discuss your property contract needs? We're here to help! Choose your preferred way to reach us:</p>
             <div class="contact-options">
-                <a href="tel:+917899082917" class="cta-button">📞 Call Now</a>
-                <a href="mailto:astilegal@gmail.com" class="cta-button">✉️ Email Us</a>
-                <a href="https://wa.me/917899082917" class="cta-button">💬 WhatsApp Us</a>
+                <a href="tel:+917899082917" class="cta-button">📞 <span>Call Now</span></a>
+                <a href="mailto:astilegal@gmail.com" class="cta-button">✉️ <span>Email Us</span></a>
+                <a href="https://wa.me/917899082917" class="cta-button">💬 <span>WhatsApp Us</span></a>
+                <a href="https://www.instagram.com/astilegal?igsh=MTI4eWh3dXlhdWJ4eg==" class="cta-button">📸 <span>Instagram</span></a>
             </div>
             <p class="form-link">Or fill out our <a href="https://forms.gle/bZMbP3Fhx5coNoEj9" target="_blank">Contact Form</a> for a quick response.</p>
         </section>
