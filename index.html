@@ -3,33 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Property Contract Services - Your trusted partner for property contracts in Bengaluru and Nagpur. Specializing in rental agreements, lease deeds, sale deeds, and document verification.">
+    <meta name="description" content="Āsti Property Contract Consultancy Services - Your trusted partner for property contracts in Bengaluru and Nagpur. Specializing in rental agreements, lease deeds, sale deeds, and document verification.">
     <meta name="keywords" content="property contract services, rental agreement, lease deed, sale deed, document verification, Nagpur, Bengaluru">
-    <meta name="author" content="Your Association Name">
+    <meta name="author" content="Āsti Property Contract Consultancy Services">
 
-    <title>Property Contract Services</title>
+    <title>Āsti Property Contract Consultancy Services</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* Base Styles */
-        body {
-            font-family: 'Roboto', sans-serif;
+        :root {
+            --primary-color: #5b3f8e;
+            --secondary-color: #ffd700;
+            --text-color: #333;
+            --bg-color: #7d56b5;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #7d56b5;
-            line-height: 1.6;
-            color: #333;
         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             overflow: hidden;
         }
+
         /* Header Styles */
         header {
-            background-color: #5b3f8e;
+            background-color: var(--primary-color);
             color: #fff;
             padding: 1rem 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -37,47 +50,50 @@
             top: 0;
             z-index: 1000;
         }
+
         header .container {
-            display: flow-root;
+            display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo img {
             height: 150px;
             width: auto;
         }
-        .logo h1 {
-            margin-left: 10px;
-            font-size: 1.8rem;
-        }
+
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
         }
+
         nav ul li {
             margin-left: 20px;
         }
+
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s, border-bottom 0.3s;
-            padding-bottom: 5px;
+            transition: color 0.3s;
             font-weight: 500;
         }
+
         nav ul li a:hover {
-            color: #ffd700;
-            border-bottom: 2px solid #ffd700;
+            color: var(--secondary-color);
         }
-        .contact {
+
+        .contact-info {
             display: flex;
             align-items: center;
         }
-        .contact p {
-            margin: 0;
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
             margin-left: 20px;
             font-weight: 500;
         }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpeg') no-repeat center center/cover;
@@ -85,66 +101,68 @@
             text-align: center;
             padding: 4rem 0;
         }
+
         .hero h1 {
-            margin: 0;
             font-size: 3rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            margin-bottom: 1rem;
         }
+
         .hero p {
             font-size: 1.5rem;
-            margin: 1rem 0 2rem;
-            font-weight: 400;
+            margin-bottom: 2rem;
         }
+
         /* Main Content Styles */
-        .main-content {
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
             background: #fff;
             padding: 2rem;
-            margin: 2rem 0;
+            margin-bottom: 2rem;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        /* Section Styles */
-        .section {
-            margin-bottom: 2rem;
-        }
-        .section h2 {
-            color: #333;
-            border-bottom: 2px solid #ffd700;
+
+        section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5rem;
-            font-size: 2rem;
-            font-weight: 700;
+            margin-bottom: 1rem;
         }
+
         /* Service Grid */
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
+
         .service-item {
             background: #f9f9f9;
             padding: 1.5rem;
             border-radius: 5px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        .service-item img {
-            width: 180px;
-            margin-bottom: 1rem;
-        }
-        .service-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        .service-item p {
-            font-size: 1rem;
-            color: #666;
-        }
+
         .service-item:hover {
             transform: translateY(-5px);
         }
+
+        .service-item img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
         /* Call-to-Action Buttons */
         .cta-button {
             display: inline-block;
@@ -155,31 +173,29 @@
             border-radius: 5px;
             transition: background-color 0.3s;
             font-weight: 500;
-            margin-top: 1rem;
         }
+
         .cta-button:hover {
             background-color: #45a049;
         }
+
         /* Testimonials */
         .testimonial {
             background: #f9f9f9;
             padding: 1.5rem;
             border-radius: 5px;
             margin-bottom: 1rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
         .testimonial p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #555;
-        }
-        .testimonial cite {
-            display: block;
-            margin-top: 1rem;
-            font-size: 1.1rem;
             font-style: italic;
-            color: #888;
+            margin-bottom: 1rem;
         }
+
+        .testimonial cite {
+            font-weight: bold;
+        }
+
         /* FAQ Accordion */
         .accordion {
             background-color: #eee;
@@ -191,9 +207,7 @@
             border: none;
             outline: none;
             transition: 0.4s;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
+            font-size: 1.1rem;
         }
 
         .accordion:hover, .accordion.active {
@@ -203,56 +217,54 @@
         .panel {
             padding: 0 18px;
             background-color: white;
-            display: none;
-            overflow: hidden;
-            border-radius: 5px;
             max-height: 0;
+            overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
-        .panel.active {
-            display: block;
-            max-height: 500px; /* Adjust as needed */
-        }
+
         /* Footer Styles */
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
-            margin-top: 2rem;
         }
+
         footer a {
-            color: #ffd700;
+            color: var(--secondary-color);
             text-decoration: none;
-            font-weight: 500;
-        }
-        /* Contact Form Styles */
-        #contact-form {
-            display: none; /* Hide the default contact form */
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                width: 95%;
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
             }
-            .logo h1 {
-                font-size: 1 rem;
+
+            nav ul {
+                margin-top: 1rem;
             }
+
+            nav ul li {
+                margin-left: 0;
+                margin-right: 20px;
+            }
+
+            .contact-info {
+                margin-top: 1rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
+
             .hero p {
                 font-size: 1.2rem;
             }
-            .service-item {
-                padding: 1rem;
-            }
-            .testimonial p {
-                font-size: 1rem;
-            }
-            .cta-button {
-                padding: 10px 20px;
+
+            .service-item img {
+                width: 150px;
             }
         }
     </style>
@@ -261,26 +273,19 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="logo.svg" alt="Property Contract Services Logo">
-                
+                <img src="logo.svg" alt="Āsti Property Contract Consultancy Services Logo">
             </div>
             <nav>
                 <ul>
                     <li><a href="#about-us">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    
                     <li><a href="contact.html">Contact</a></li>
-                    
                 </ul>
             </nav>
-            <div class="contact">
-              <p>Phone: 
-  <a href="tel:+917899082917" class="cta-button">
-    <img src="phone-call.png" alt="Phone Icon" style="vertical-align: middle; width: 16px; height: 16px;"> Call Now
-  </a>
-</p>
-
-
+            <div class="contact-info">
+                <a href="tel:+917899082917" class="cta-button">
+                    <img src="phone-call.png" alt="Phone Icon" style="vertical-align: middle; width: 16px; height: 16px;"> Call Now
+                </a>
             </div>
         </div>
     </header>
@@ -293,95 +298,78 @@
         </div>
     </div>
     
-    <div class="container">
-        <main class="main-content">
-            <section id="about-us" class="section">
-                <h2>About Us</h2>
-                <p>At Āsti, we excel in crafting and customizing property contracts to precisely fit our clients' unique requirements. With a dedicated focus on professionalism and precision, our expert team guarantees that every document we create is legally robust and fully compliant with regulatory standards. Whether you're buying, selling, or leasing property, we prioritize clarity and accuracy in every detail, ensuring peace of mind for our clients throughout the process. Our commitment extends beyond drafting contracts; we provide comprehensive services that include document modification and verification, ensuring that all aspects of property transactions are seamlessly managed. With Āsti, you can trust in our expertise to navigate the complexities of property law, delivering solutions that are tailored to safeguard your interests effectively.
+    <main class="container">
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>At Āsti, we excel in crafting and customizing property contracts to precisely fit our clients' unique requirements. With a dedicated focus on professionalism and precision, our expert team guarantees that every document we create is legally robust and fully compliant with regulatory standards. Whether you're buying, selling, or leasing property, we prioritize clarity and accuracy in every detail, ensuring peace of mind for our clients throughout the process.</p>
+            <p>Our commitment extends beyond drafting contracts; we provide comprehensive services that include document modification and verification, ensuring that all aspects of property transactions are seamlessly managed. With Āsti, you can trust in our expertise to navigate the complexities of property law, delivering solutions that are tailored to safeguard your interests effectively.</p>
+        </section>
 
-
-
-
-
-
-</p>
-            </section>
-
-            <section id="services" class="section">
-                <h2>Our Services</h2>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <img src="service1.jpeg" alt="Service 1">
-                        <h3>Rental Agreements</h3>
-                        <p>Customized rental agreements that protect both tenants and landlords.</p>
-                    </div>
-                    <div class="service-item">
-                        <img src="service2.jpeg" alt="Service 2">
-                        <h3>Lease Deeds</h3>
-                        <p>Comprehensive lease deeds that ensure clear terms and conditions.</p>
-                    </div>
-                    <div class="service-item">
-                        <img src="service3.jpeg" alt="Service 3">
-                        <h3>Sale Deeds</h3>
-                        <p>Efficient sale deeds that facilitate smooth property transfers.</p>
-                    </div>
-                    <div class="service-item">
-                        <img src="service4.jpeg" alt="Service 4">
-                        <h3>Document Verification</h3>
-                        <p>Thorough verification of property documents to prevent legal issues.</p>
-                    </div>
-					<div class="service-item">
-                        <img src="service5.jpeg" alt="Service 4">
-                        <h3>Gift Deeds</h3>
-                        <p>Stipulations making the Gift more precise and concise</p>
-                    </div>
-					<div class="service-item">
-                        <img src="service6.jpeg" alt="Service 4">
-                        <h3>Mortgage Deeds</h3>
-                        <p>Safe Mortgage contracts opens key to property ownership</p>
-                    </div>
-					<div class="service-item">
-                        <img src="service7.jpeg" alt="Service 4">
-                        <h3>Many More</h3>
-                        <p>Many more legal contracts can be drafted</p>
-                    </div>
-					
-				
-					
-					
-					
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="service1.jpeg" alt="Rental Agreements">
+                    <h3>Rental Agreements</h3>
+                    <p>Customized rental agreements that protect both tenants and landlords.</p>
                 </div>
-            </section>
+                <div class="service-item">
+                    <img src="service2.jpeg" alt="Lease Deeds">
+                    <h3>Lease Deeds</h3>
+                    <p>Comprehensive lease deeds that ensure clear terms and conditions.</p>
+                </div>
+                <div class="service-item">
+                    <img src="service3.jpeg" alt="Sale Deeds">
+                    <h3>Sale Deeds</h3>
+                    <p>Efficient sale deeds that facilitate smooth property transfers.</p>
+                </div>
+                <div class="service-item">
+                    <img src="service4.jpeg" alt="Document Verification">
+                    <h3>Document Verification</h3>
+                    <p>Thorough verification of property documents to prevent legal issues.</p>
+                </div>
+                <div class="service-item">
+                    <img src="service5.jpeg" alt="Gift Deeds">
+                    <h3>Gift Deeds</h3>
+                    <p>Stipulations making the Gift more precise and concise</p>
+                </div>
+                <div class="service-item">
+                    <img src="service6.jpeg" alt="Mortgage Deeds">
+                    <h3>Mortgage Deeds</h3>
+                    <p>Safe Mortgage contracts opens key to property ownership</p>
+                </div>
+                <div class="service-item">
+                    <img src="service7.jpeg" alt="Many More">
+                    <h3>Many More</h3>
+                    <p>Many more legal contracts can be drafted</p>
+                </div>
+            </div>
+        </section>
 
-            <section id="pricing" class="section">
-                <h2>Our Pricing</h2>
-                <p>We offer competitive pricing packages tailored to meet your specific requirements. Contact us today for a detailed quote!</p>
-				
-                <a href="tel:+917899082917" class="cta-button">Call Now</a>
-                <a href="mailto:astilegal@gmail.com" class="cta-button">Email Us</a>
-                <p>Or fill out our <a href="contact.html" target="_blank" class="cta-button">Contact Form</a> for a quick response.</p>
-            </section>
+        <section id="pricing">
+            <h2>Our Pricing</h2>
+            <p>We offer competitive pricing packages tailored to meet your specific requirements. Contact us today for a detailed quote!</p>
+            <a href="tel:+917899082917" class="cta-button">Call Now</a>
+            <a href="mailto:astilegal@gmail.com" class="cta-button">Email Us</a>
+            <p>Or fill out our <a href="contact.html" target="_blank" class="cta-button">Contact Form</a> for a quick response.</p>
+        </section>
 
-           <section id="faq" class="section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="accordion-container">
-        <button class="accordion">What types of property contracts do you handle?</button>
-        <div class="panel">
-            <p>We handle a wide range of property contracts including rental agreements, lease deeds, sale deeds, and document verification services.</p>
-        </div>
-        <button class="accordion">How do I get started with your services?</button>
-        <div class="panel">
-            <p>Getting started is easy! Simply contact us via phone or email, or fill out our online form to discuss your requirements.</p>
-        </div>
-        <button class="accordion">What are your service areas?</button>
-        <div class="panel">
-            <p>We currently serve clients in Bengaluru and Nagpur, ensuring personalized service and expertise in local property laws.</p>
-        </div>
-    </div>
-</section>
-
-        </main>
-    </div>
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <button class="accordion">What types of property contracts do you handle?</button>
+            <div class="panel">
+                <p>We handle a wide range of property contracts including rental agreements, lease deeds, sale deeds, and document verification services.</p>
+            </div>
+            <button class="accordion">How do I get started with your services?</button>
+            <div class="panel">
+                <p>Getting started is easy! Simply contact us via phone or email, or fill out our online form to discuss your requirements.</p>
+            </div>
+            <button class="accordion">What are your service areas?</button>
+            <div class="panel">
+                <p>We currently serve clients in Bengaluru and Nagpur, ensuring personalized service and expertise in local property laws.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
