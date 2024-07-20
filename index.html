@@ -3,418 +3,721 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Āsti Property Contract Consultancy Services - Your trusted partner for property contracts in Bengaluru and Nagpur. Specializing in rental agreements, lease deeds, sale deeds, and document verification.">
-    <meta name="keywords" content="property contracts, consultancy services, rental agreement, lease deed, sale deed, document verification, Bengaluru, Nagpur">
-    <meta name="author" content="Āsti Property Contract Consultancy Services">
-
-    <title>Āsti Property Contract Consultancy Services</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <meta name="description" content="Āsti Property Contract Consultancy Services - Premier real estate solutions in Bengaluru and Nagpur.">
+    <meta name="keywords" content="property contracts, real estate consultancy, Bengaluru, Nagpur">
+    <title>Āsti | Premium Property Contract Consultancy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Base Styles */
         :root {
-            --primary-color: #5b3f8e;
-            --secondary-color: #ffd700;
-            --text-color: #333;
-            --bg-color: #7d56b5;
+            --primary-color: #1a1a1a;
+            --secondary-color: #ffffff;
+            --accent-color: #d4af37;
+            --text-color: #333333;
+            --bg-color: #f5f5f5;
+            --transition: all 0.3s ease;
         }
-
+        
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
+        
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
         }
-
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            overflow: hidden;
         }
-
-        /* Header Styles */
+        
         header {
             background-color: var(--primary-color);
-            color: #fff;
+            color: var(--secondary-color);
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: relative;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            opacity: 0.7;
-            text-align: center; /* Center text and logo */
+            transition: var(--transition);
         }
-
+        
+        header.scrolled {
+            background-color: rgba(26, 26, 26, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
-        header .logo {
-            display: inline-block; /* Ensure logo stays in-line */
-            text-align: center; /* Center logo within its container */
-        }
-
-        header .logo img {
-            height: 150px;
+        
+        .logo img {
+            height: 120px;
             width: auto;
         }
-
+        
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
         }
-
+        
         nav ul li {
-            margin-left: 20px;
+            margin-left: 2rem;
         }
-
+        
         nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        nav ul li a:hover {
             color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 400;
+            transition: var(--transition);
+            position: relative;
         }
-
-        .contact-info {
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero.jpeg') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
             align-items: center;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpeg') no-repeat center center/cover;
-            color: #fff;
+            color: var(--secondary-color);
             text-align: center;
-            padding: 4rem 0;
         }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
+        
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
         }
-
-        .hero p {
-            font-size: 1.5rem;
+        
+        .hero-content p {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease 0.5s forwards;
         }
-
-        /* Main Content Styles */
-        main {
-            padding: 2rem 0;
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        section {
-            background: #fff;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        section h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Service Grid */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .service-item {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 5px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-item img {
-            width: 180px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-
-        .service-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Call-to-Action Buttons */
+        
         .cta-button {
             display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 24px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            font-weight: 500;
+            font-weight: 700;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease 1s forwards;
+            border-radius: 30px;
         }
-
+        
         .cta-button:hover {
-            background-color: #45a049;
-			
+            background-color: var(--secondary-color);
+            color: var(--accent-color);
         }
-		.cta-button{
-		margin:10px;
-		}
-
-        /* Testimonials */
-        .testimonial {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 5px;
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-item {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-item i {
+            font-size: 3rem;
+            color: var(--accent-color);
             margin-bottom: 1rem;
         }
-
+        
+        .service-item h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .testimonials {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background-color: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+        }
+        
         .testimonial p {
             font-style: italic;
             margin-bottom: 1rem;
         }
-
+        
         .testimonial cite {
-            font-weight: bold;
+            font-weight: 700;
+            color: var(--accent-color);
         }
-
-        /* FAQ Accordion */
-        .accordion {
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
+        
+        #contact {
+            background-color: var(--secondary-color);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
             width: 100%;
-            text-align: left;
-            border: none;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
             outline: none;
-            transition: 0.4s;
-            font-size: 1.1rem;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
-
-        .accordion:hover, .accordion.active {
-            background-color: #ddd;
+        
+        .contact-form button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 30px;
+            font-weight: 700;
         }
-
-        .panel {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
+        
+        .contact-form button:hover {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
         }
-
-        /* Footer Styles */
+        
         footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        footer a {
+            background-color: var(--primary-color);
             color: var(--secondary-color);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        footer a {
+            color: var(--accent-color);
             text-decoration: none;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+        
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+		.call-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: var(--transition);
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.call-button i {
+    margin-right: 0.5rem;
+}
+
+.call-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+ .form-container {
+            background: #fff; /* White background for form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px auto;
+            border: 1px solid #d68e8f; /* Border matching the call button */
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
-        /* Responsive Design */
+     .form-container:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            border-color: #a15b57; /* Darker variant on hover */
+        }
+
+        iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            height: 800px; /* Adjust as needed */
+        }
+
+
+        
         @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-            }
-
-            nav ul li {
-                margin-left: 0;
-                margin-right: 20px;
-            }
-
-            .contact-info {
-                margin-top: 1rem;
-            }
-
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
+            
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--primary-color);
+                width: 100%;
+                display: none;
+                padding: 1rem 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
 
-            .hero p {
-                font-size: 1.2rem;
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
             }
 
-            .service-item img {
-                width: 150px;
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="logo.svg" alt="Āsti Property Contract Consultancy Services Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about-us">About Us</a></li>
-					<li><a href="#our-aim">Our Aim</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="contact-info">
-                <a href="tel:+917899082917" class="cta-button">
-                    <img src="phone-call.png" alt="Phone Icon" style="vertical-align: middle; width: 16px; height: 16px;"> Call Now
-                </a>
-            </div>
+   <header>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.svg" alt="Āsti Logo">
         </div>
-    </header>
-
-    <div class="hero">
-        <div class="container">
-            <h1>Welcome To Āsti Property Contract Consultancy Services</h1>
-            <p>Your trusted partner for all property contract needs in Bengaluru and Nagpur.</p>
-            <a href="#services" class="cta-button">Learn More</a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:+917899082917" class="call-button">
+    <i class="fa-solid fa-phone"></i> Call Us
+</a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
-    
-    <main class="container">
-        <section id="about-us">
-            <h2>About Us</h2>
-            <p>At Āsti, we excel in crafting and customizing property contracts to precisely fit our clients' unique requirements. With a dedicated focus on professionalism and precision, our expert team guarantees that every document we create is legally robust and fully compliant with regulatory standards. Whether you're buying, selling, or leasing property, we prioritize clarity and accuracy in every detail, ensuring peace of mind for our clients throughout the process.</p>
-            <p>Our commitment extends beyond drafting contracts; we provide comprehensive services that include document modification and verification, ensuring that all aspects of property transactions are seamlessly managed. With Āsti, you can trust in our expertise to navigate the complexities of property law, delivering solutions that are tailored to safeguard your interests effectively.</p>
-        </section>
-		<section id="our-aim">
+</header>
+
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premium Property Solutions</h1>
+                <p>Elevating real estate experiences in Bengaluru and Nagpur</p>
+                <a href="#contact" class="cta-button">Consult with Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Āsti</h2>
+			<p>At Āsti, we excel in crafting and customizing property contracts to precisely fit our clients' unique requirements. With a dedicated focus on professionalism and precision, our expert team guarantees that every document we create is legally robust and fully compliant with regulatory standards. Whether you're buying, selling, or leasing property, we prioritize clarity and accuracy in every detail, ensuring peace of mind for our clients throughout the process.
+
+Our commitment extends beyond drafting contracts; we provide comprehensive services that include document modification and verification, ensuring that all aspects of property transactions are seamlessly managed. With Āsti, you can trust in our expertise to navigate the complexities of property law, delivering solutions that are tailored to safeguard your interests effectively.</p>
+
+        </div>
+    </section>
+	<section id="about">
+        <div class="container">
             <h2>Our Aim</h2>
-            <p>Our primary objective is to provide quality legal services that contribute to the betterment of society. We are dedicated to ensuring that our clients receive comprehensive protection from any form of interference or complications that may arise after the provision of legal services. At the heart of our practice is a commitment to perfection, where every piece of work we undertake is executed with the utmost diligence and precision.
+			<p>Our primary objective is to provide quality legal services that contribute to the betterment of society. We are dedicated to ensuring that our clients receive comprehensive protection from any form of interference or complications that may arise after the provision of legal services. At the heart of our practice is a commitment to perfection, where every piece of work we undertake is executed with the utmost diligence and precision. We believe that the role of legal professionals extends beyond mere representation in courtrooms. It involves guiding clients through complex legal landscapes with clarity and confidence. By providing sound legal advice and robust representation, we help our clients navigate the intricacies of the law, making informed decisions that safeguard their interests and promote justice.
 
-We believe that the role of legal professionals extends beyond mere representation in courtrooms. It involves guiding clients through complex legal landscapes with clarity and confidence. By providing sound legal advice and robust representation, we help our clients navigate the intricacies of the law, making informed decisions that safeguard their interests and promote justice.</p>
-            <p>Integrity and ethical practice are the cornerstones of our operation. We adhere to the highest standards of professional conduct, ensuring that our actions are always in the best interests of our clients. Transparency, honesty, and respect are the principles that guide our interactions with clients, the courts, and opposing parties. We are committed to building trust and fostering long-term relationships with those we serve.</p>
-        </section>
+Integrity and ethical practice are the cornerstones of our operation. We adhere to the highest standards of professional conduct, ensuring that our actions are always in the best interests of our clients. Transparency, honesty, and respect are the principles that guide our interactions with clients, the courts, and opposing parties. We are committed to building trust and fostering long-term relationships with those we serve.</p>
+			
+        </div>
+    </section>
 
-
-        <section id="services">
+    <section id="services">
+        <div class="container">
             <h2>Our Services</h2>
-            <div class="service-grid">
+            <div class="services-grid">
                 <div class="service-item">
-                    <img src="service1.jpeg" alt="Rental Agreements">
+                    <i class="fas fa-file-signature"></i>
                     <h3>Rental Agreements</h3>
-                    <p>Customized rental agreements that protect both tenants and landlords.</p>
+                    <p>Tailored contracts ensuring clarity and protection for all parties involved.</p>
                 </div>
                 <div class="service-item">
-                    <img src="service2.jpeg" alt="Lease Deeds">
+                    <i class="fas fa-building"></i>
                     <h3>Lease Deeds</h3>
-                    <p>Comprehensive lease deeds that ensure clear terms and conditions.</p>
+                    <p>Comprehensive lease agreements for commercial and residential properties.</p>
                 </div>
                 <div class="service-item">
-                    <img src="service3.jpeg" alt="Sale Deeds">
+                    <i class="fas fa-home"></i>
                     <h3>Sale Deeds</h3>
-                    <p>Efficient sale deeds that facilitate smooth property transfers.</p>
+                    <p>End-to-end management solutions for property owners and investors.</p>
                 </div>
                 <div class="service-item">
-                    <img src="service4.jpeg" alt="Document Verification">
+                   <i class="fa-solid fa-gift"></i>
+                    <h3>Gift Deeds</h3>
+                    <p>Thorough property checks to mitigate risks and ensure smooth transactions.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3>Mortage Deeds</h3>
+                    <p>Expert advice on all aspects of real estate law and regulations.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fa-solid fa-file"></i>
                     <h3>Document Verification</h3>
                     <p>Thorough verification of property documents to prevent legal issues.</p>
                 </div>
-                <div class="service-item">
-                    <img src="service5.jpeg" alt="Gift Deeds">
-                    <h3>Gift Deeds</h3>
-                    <p>Stipulations making the Gift more precise and concise</p>
+				<div class="service-item">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
+					  <h3>Adoption Deeds</h3>
+                    <p>In-depth market research to inform your property decisions.</p>
                 </div>
-                <div class="service-item">
-                    <img src="service6.jpeg" alt="Mortgage Deeds">
-                    <h3>Mortgage Deeds</h3>
-                    <p>Safe Mortgage contracts opens key to property ownership</p>
+				<div class="service-item">
+                    <i class="fa-regular fa-building"></i>
+                    <h3>Constuction Agreements</h3>
+                    <p>In-depth market research to inform your property decisions.</p>
                 </div>
-                <div class="service-item">
-                    <img src="service7.jpeg" alt="Many More">
-                    <h3>Many More</h3>
-                    <p>Many more legal contracts can be drafted</p>
+				
+				<div class="service-item">
+                   <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>Legal Consultation</h3>
+                    <p>In-depth market research to inform your property decisions.</p>
+                </div>
+				<div class="service-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Many More..</h3>
+                    <p>In-depth market research to inform your property decisions.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="pricing">
-            <h2>Our Pricing</h2>
-            <p>We offer competitive pricing packages tailored to meet your specific requirements. Contact us today for a detailed quote!</p>
-            <a href="tel:+917899082917" class="cta-button">Call Now</a>
-            <a href="mailto:astilegal@gmail.com" class="cta-button">Email Us</a>
-            <p>Or fill out our <a href="contact.html" target="_blank" class="cta-button">Contact Form</a> for a quick response.</p>
-        </section>
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Āsti's expertise and professionalism made our property transaction seamless. Highly recommended!"</p>
+                    <cite>- Rahul Mehta, Bengaluru</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"The team at Āsti went above and beyond to ensure our rental agreement was fair and comprehensive."</p>
+                    <cite>- Priya Sharma, Nagpur</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Their market insights were invaluable in our property investment decision. Thank you, Āsti!"</p>
+                    <cite>- Vikram Reddy, Bengaluru</cite>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <button class="accordion">What types of property contracts do you handle?</button>
-            <div class="panel">
-                <p>We handle a wide range of property contracts including rental agreements, lease deeds, sale deeds, and document verification services.</p>
+      <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsLlYHQphNIN6ksqw9SmuV7Yl7is1y3lYd5wJGPgRYEsV9cw/viewform?usp=sf_link" height="741" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
-            <button class="accordion">How do I get started with your services?</button>
-            <div class="panel">
-                <p>Getting started is easy! Simply contact us via phone or email, or fill out our online form to discuss your requirements.</p>
-            </div>
-            <button class="accordion">What are your service areas?</button>
-            <div class="panel">
-                <p>We currently serve clients in Bengaluru and Nagpur, ensuring personalized service and expertise in local property laws.</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Āsti. All rights reserved.</p>
-            <nav>
-                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-            </nav>
+            <p>&copy; 2024 Āsti Property Contract Consultancy. All rights reserved.</p>
+            <p>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </p>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for accordion functionality
-        const accordions = document.querySelectorAll(".accordion");
+    <div class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 
-        accordions.forEach(accordion => {
-            accordion.addEventListener("click", function() {
-                this.classList.toggle("active");
-                const panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav ul');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                // Close mobile menu if open
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
                 }
             });
         });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        const scrollThreshold = 100;
+
+        function handleHeaderScroll() {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', handleHeaderScroll);
+        handleHeaderScroll(); // Initial check
+
+        // Scroll to top button
+        const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+        function handleScrollToTopButton() {
+            if (window.scrollY > 300) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        }
+
+        window.addEventListener('scroll', handleScrollToTopButton);
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission with validation
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validateForm()) {
+                // Here you would typically send the form data to a server
+                // For demonstration, we'll just show an alert
+                alert('Thank you for your message. We will get back to you soon!');
+                form.reset();
+            }
+        });
+
+        function validateForm() {
+            let isValid = true;
+            const inputs = form.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    showError(input, 'This field is required');
+                } else {
+                    clearError(input);
+                }
+            });
+            return isValid;
+        }
+
+        function showError(input, message) {
+            const errorElement = input.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.textContent = message;
+            } else {
+                const error = document.createElement('div');
+                error.className = 'error-message';
+                error.textContent = message;
+                error.style.color = 'red';
+                error.style.fontSize = '0.8rem';
+                error.style.marginTop = '-0.5rem';
+                error.style.marginBottom = '0.5rem';
+                input.parentNode.insertBefore(error, input.nextSibling);
+            }
+        }
+
+        function clearError(input) {
+            const errorElement = input.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.remove();
+            }
+        }
+
+        // Intersection Observer for fade-in effect
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-item, .testimonial').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Lazy loading images
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    lazyImageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => lazyImageObserver.observe(img));
     </script>
 </body>
 </html>
