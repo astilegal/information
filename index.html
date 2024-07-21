@@ -745,5 +745,12 @@ Integrity and ethical practice are the cornerstones of our operation. We adhere 
         lazyImages.forEach(img => lazyImageObserver.observe(img));
     </script>
 	<script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>669c0fea99f33102a0ab633c,669c0f05a96be68837571525</script>
+	<script>
+  fetch('https://counter-r266.onrender.com/increment')
+    .then(response => response.json())
+    .then(data => console.log('View count incremented:', data.views))
+    .catch(error => console.error('Error incrementing view count:', error));
+</script>
+
 </body>
 </html>
