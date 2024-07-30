@@ -1163,7 +1163,11 @@ Integrity and ethical practice are the cornerstones of our operation. We adhere 
     .then(data => console.log('View count incremented:', data.views))
     .catch(error => console.error('Error incrementing view count:', error));
 </script>
-
+<script>
+  fetch('http://localhost:3000/increment', { method: 'POST' })
+    .then(response => console.log('View counted'))
+    .catch(error => console.error('Error:', error));
+</script>
 	
 </body>
 </html>
