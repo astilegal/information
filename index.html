@@ -804,14 +804,14 @@ body {
 .parallax-section {
     background-image: url('parallax-bg.jpg');
     height: 760px;
-    background-attachment: fixed;
-    
-	background-position: right;
+    background-position: right;
     background-repeat: repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .parallax-content {
@@ -834,15 +834,16 @@ body {
 
 
 .services-parallax1 {
-    background-image: url('services.jpg');
+    background-image: url('Services.jpg');
     height: 760px;
-    background-attachment: fixed;
     background-position: right;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .services-parallax .parallax-content {
@@ -1267,23 +1268,59 @@ Integrity and ethical practice are the cornerstones of our operation. We adhere 
     .catch(error => console.error('Error:', error));
 </script>
 <script>
-window.addEventListener('scroll', function() {
-    const parallaxSections = document.querySelectorAll('.parallax-section');
-    parallaxSections.forEach(section => {
+// Script for the first parallax section
+(function() {
+    const parallaxSection1 = document.querySelector('.parallax-section');
+    
+    function handleParallax1() {
+        if (!parallaxSection1) return;
+        
         let scrollPosition = window.pageYOffset;
-        section.style.backgroundPositionY = (scrollPosition * 0.5) + 'px';
-    });
-});
+        let yPos = -(scrollPosition * 0.7); // Adjust the '0.3' value to control the parallax speed
+        
+        parallaxSection1.style.backgroundPositionY = yPos + 'px';
+    }
+
+    window.addEventListener('scroll', handleParallax1);
+
+    // iOS detection and fallback
+    function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
+
+    if (isIOS() && parallaxSection1) {
+        parallaxSection1.style.backgroundAttachment = 'scroll';
+        parallaxSection1.style.backgroundPosition = 'right';
+    }
+})();
 </script>
 <script>
-// Parallax effect
-window.addEventListener('scroll', function() {
-    const parallax = document.querySelector('.parallax-section');
-    let scrollPosition = window.pageYOffset;
-    parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-});
-</script>
+// Script for the second parallax section (services)
+(function() {
+    const parallaxSection2 = document.querySelector('.services-parallax1');
+    
+    function handleParallax2() {
+        if (!parallaxSection2) return;
+        
+        let scrollPosition = window.pageYOffset;
+        let yPos = -(scrollPosition * 0.7); // Adjust the '0.2' value for a different parallax speed
+        
+        parallaxSection2.style.backgroundPositionY = yPos + 'px';
+    }
 
+    window.addEventListener('scroll', handleParallax2);
+
+    // iOS detection and fallback
+    function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
+
+    if (isIOS() && parallaxSection2) {
+        parallaxSection2.style.backgroundAttachment = 'scroll';
+        parallaxSection2.style.backgroundPosition = 'right';
+    }
+})();
+</script>
 
 	
 </body>
