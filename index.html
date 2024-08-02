@@ -801,9 +801,7 @@ body {
     transform: translateX(100%);
 }
 
-.parallax-section {
-    background-image: url('parallax-bg.jpg');
-    height: 760px;
+.parallax-section, .services-parallax1 {
     background-position: right;
     background-repeat: repeat;
     background-size: cover;
@@ -814,13 +812,17 @@ body {
     transform: translate3d(0,0,0);
 }
 
+.parallax-section {
+    background-image: url('parallax-bg.jpg');
+    height: 760px;
+}
+
 .parallax-content {
     text-align: center;
     color: #ffffff;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-	
 }
 
 .parallax-content h2 {
@@ -832,21 +834,12 @@ body {
     font-size: 1.2rem;
 }
 
-
 .services-parallax1 {
     background-image: url('Services2.jpg');
     height: 760px;
-    background-position: right;
-    background-repeat: repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
 }
 
-.services-parallax .parallax-content {
+.services-parallax1 .parallax-content {
     text-align: center;
     color: #ffffff;
     padding: 20px;
@@ -854,12 +847,12 @@ body {
     border-radius: 10px;
 }
 
-.services-parallax .parallax-content h2 {
+.services-parallax1 .parallax-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.services-parallax .parallax-content p {
+.services-parallax1 .parallax-content p {
     font-size: 1.2rem;
 }
     </style>
