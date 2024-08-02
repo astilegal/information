@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.80">
+    <meta name="viewport" content="width=device-width, initial-scale=0.90">
     <meta name="description" content="Āsti Property Contract Consultancy Services - Premier real estate solutions in Bengaluru and Nagpur.">
     <meta name="keywords" content="property contracts, real estate consultancy, Bengaluru, Nagpur">
     <title>Āsti | Premium Property Contract Consultancy</title>
@@ -800,8 +800,67 @@ body {
 .skills span:hover::after {
     transform: translateX(100%);
 }
+
+.parallax-section {
+    background-image: url('parallax-bg.jpg');
+    height: 760px;
+    background-attachment: fixed;
+    
+	background-position: right;
+    background-repeat: repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.parallax-content {
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+	
+}
+
+.parallax-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.parallax-content p {
+    font-size: 1.2rem;
+}
+
+
+.services-parallax1 {
+    background-image: url('services.jpg');
+    height: 760px;
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-parallax .parallax-content {
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.services-parallax .parallax-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-parallax .parallax-content p {
+    font-size: 1.2rem;
+}
     </style>
 </head>
 <body>
@@ -839,6 +898,7 @@ body {
             </div>
         </div>
     </section>
+	
 
     <section id="about">
         <div class="container">
@@ -849,6 +909,12 @@ Our commitment extends beyond drafting contracts; we provide comprehensive servi
 
         </div>
     </section>
+	<section class="parallax-section">
+    <div class="parallax-content">
+        <h2>Experience Excellence in Property Contracts</h2>
+        <p>Your trusted partner in real estate legal services</p>
+    </div>
+</section>
 	<section id="aim">
         <div class="container">
             <h2>Our Aim</h2>
@@ -858,6 +924,8 @@ Integrity and ethical practice are the cornerstones of our operation. We adhere 
 			
         </div>
     </section>
+	
+	
 
     <section id="services">
         <div class="container">
@@ -917,6 +985,13 @@ Integrity and ethical practice are the cornerstones of our operation. We adhere 
             </div>
         </div>
     </section>
+	
+	<section class="parallax-section1 services-parallax1">
+    <div class="parallax-content">
+        <h2>Our Comprehensive Services</h2>
+        <p>Expert solutions for all your property contract needs</p>
+    </div>
+</section>
 
     <section id="testimonials" class="testimonials">
         <div class="container">
@@ -1191,6 +1266,25 @@ Integrity and ethical practice are the cornerstones of our operation. We adhere 
     .then(response => console.log('View counted'))
     .catch(error => console.error('Error:', error));
 </script>
+<script>
+window.addEventListener('scroll', function() {
+    const parallaxSections = document.querySelectorAll('.parallax-section');
+    parallaxSections.forEach(section => {
+        let scrollPosition = window.pageYOffset;
+        section.style.backgroundPositionY = (scrollPosition * 0.5) + 'px';
+    });
+});
+</script>
+<script>
+// Parallax effect
+window.addEventListener('scroll', function() {
+    const parallax = document.querySelector('.parallax-section');
+    let scrollPosition = window.pageYOffset;
+    parallax.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+});
+</script>
+
+
 	
 </body>
 </html>
